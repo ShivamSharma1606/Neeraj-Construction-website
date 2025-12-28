@@ -1078,3 +1078,111 @@ nav .container {
     padding: 0.6rem 1.4rem;
 }
 
+/* Floating WhatsApp Button (Real SVG) */
+.whatsapp-float {
+    position: fixed;
+    bottom: 122px;
+    right: 22px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.35),
+        0 0 0 6px rgba(37, 211, 102, 0.25);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow:
+        0 14px 35px rgba(0,0,0,0.45),
+        0 0 0 8px rgba(37, 211, 102, 0.35);
+}
+
+/* SVG icon */
+.whatsapp-icon {
+    width: 30px;
+    height: 30px;
+    fill: #ffffff;
+}
+
+/* Mobile spacing */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 56px;
+        height: 56px;
+        bottom: 16px;
+        right: 16px;
+    }
+
+    .whatsapp-icon {
+        width: 28px;
+        height: 28px;
+    }
+}
+/* Factory Location / Map Section */
+
+.map-wrapper {
+    margin-top: 1.8rem;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+}
+
+.location-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.6rem;
+}
+
+/* Primary Get Directions button */
+.gold-btn {
+    background: linear-gradient(135deg, #D4AF37, #FFD700);
+    color: #000;
+    padding: 0.9rem 1.8rem;
+    border-radius: 30px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.gold-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(212,175,55,0.3);
+}
+
+/* Outline button for secondary link */
+.gold-btn-outline {
+    background: transparent;
+    color: #D4AF37;
+    padding: 0.9rem 1.8rem;
+    border: 2px solid #D4AF37;
+    border-radius: 30px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.gold-btn-outline:hover {
+    background: rgba(212,175,55,0.1);
+    color: #FFD700;
+}
+body {
+    padding-bottom: 80px;   /* SAME as footer height */
+}
+@media (max-width: 768px) {
+    .glass-footer {
+        height: 100px;
+    }
+
+    body {
+        padding-bottom: 100px;
+    }
+}
