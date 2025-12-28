@@ -6,6 +6,10 @@
     <title>Products - Neeraj Construction</title>
     <meta name="description" content="Explore our range of paver blocks including interlocking, zigzag, designer, and heavy-duty options with detailed specifications.">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
     <script>
@@ -16,14 +20,18 @@
     </script>
 </head>
 <body>
-    <nav>
+    <nav class="glass-nav">
         <div class="container">
-            <h1>Neeraj Construction</h1>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+            <div class="logo">
+                <img src="images/logo.svg" alt="Neeraj Construction Logo" class="logo-img">
+                <h1>Neeraj Construction</h1>
+            </div>
+            <button id="nav-toggle" aria-controls="nav-list" aria-expanded="false" aria-label="Menu">☰</button>
+            <ul id="nav-list">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About Us</a></li>
+                <li><a href="index.html#products" class="nav-link">Products</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact Us</a></li>
             </ul>
         </div>
     </nav>
@@ -34,22 +42,22 @@
                 <h1>Our Paver Block Products</h1>
                 <div class="product-grid">
                     <div class="product-card">
-                        <img src="images/interlocking.jpg" alt="Interlocking Paver Blocks" loading="lazy">
+                        <img src="images/interlocking.svg" alt="Interlocking Paver Blocks" loading="lazy">
                         <h2>Interlocking Paver Blocks</h2>
                         <p><strong>Strength:</strong> High compressive strength<br><strong>Size:</strong> 200x100x60mm</p>
                     </div>
                     <div class="product-card">
-                        <img src="images/zigzag.jpg" alt="Zigzag Paver Blocks" loading="lazy">
+                        <img src="images/zigzag.svg" alt="Zigzag Paver Blocks" loading="lazy">
                         <h2>Zigzag Paver Blocks</h2>
                         <p><strong>Strength:</strong> Durable for outdoor use<br><strong>Size:</strong> 200x100x80mm</p>
                     </div>
                     <div class="product-card">
-                        <img src="images/designer.jpg" alt="Designer Paver Blocks" loading="lazy">
+                        <img src="images/designer.svg" alt="Designer Paver Blocks" loading="lazy">
                         <h2>Designer Paver Blocks</h2>
                         <p><strong>Strength:</strong> Aesthetic and strong<br><strong>Size:</strong> Custom sizes available</p>
                     </div>
                     <div class="product-card">
-                        <img src="images/heavy-duty.jpg" alt="Heavy-Duty Paver Blocks" loading="lazy">
+                        <img src="images/heavy-duty.svg" alt="Heavy-Duty Paver Blocks" loading="lazy">
                         <h2>Heavy-Duty Paver Blocks</h2>
                         <p><strong>Strength:</strong> Suitable for heavy loads<br><strong>Size:</strong> 300x150x100mm</p>
                     </div>
@@ -58,9 +66,9 @@
         </section>
     </main>
     
-    <footer>
+    <footer class="glass-footer">
         <div class="container">
-            <p>&copy; 2023 Neeraj Construction. All rights reserved.</p>
+            <p>&copy; <span id="year">2025</span> Neeraj Construction. All rights reserved.</p>
             <p>Phone: <a href="tel:+911234567890" id="phone-link">+91 12345 67890</a> | WhatsApp: <a href="https://wa.me/911234567890" id="whatsapp-link">Chat Now</a></p>
         </div>
     </footer>

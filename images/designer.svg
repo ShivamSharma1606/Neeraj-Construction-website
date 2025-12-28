@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#222"/>
+  <g fill="#D4AF37">
+    <circle cx="200" cy="200" r="60"/>
+    <rect x="360" y="140" width="140" height="120" rx="10"/>
+    <polygon points="580,260 640,140 700,260"/>
+  </g>
+  <text x="400" y="520" font-family="Georgia, serif" font-size="32" fill="#fff" text-anchor="middle">Designer</text>
+</svg>

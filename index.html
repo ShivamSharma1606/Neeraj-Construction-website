@@ -6,6 +6,17 @@
     <title>Neeraj Construction - Premium Paver Blocks Manufacturer</title>
     <meta name="description" content="Leading manufacturer of high-quality interlocking, zigzag, designer, and heavy-duty paver blocks for construction projects in India.">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <meta property="og:title" content="Neeraj Construction - Premium Paver Blocks">
+    <meta property="og:description" content="High-quality interlocking, zigzag, designer & heavy-duty paver blocks.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Organization","name":"Neeraj Construction","url":"./","logo":"./images/logo.svg","sameAs":[]}
+    </script>
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
     <script>
@@ -15,77 +26,220 @@
         gtag('config', 'GA_MEASUREMENT_ID');
     </script>
 </head>
+    <a class="skip-link" href="#main-content">Skip to content</a>
 <body>
-    <nav>
+    <nav id="navbar" class="glass-nav">
         <div class="container">
-            <h1>Neeraj Construction</h1>
+            <div class="logo">
+                <img src="images/logo.svg" alt="Neeraj Construction Logo" class="logo-img" style="display:block;margin:0 auto;">
+                <h1 style="margin-top:0.7rem;text-align:center;">Neeraj Construction</h1>
+                <button id="nav-toggle" aria-controls="nav-list" aria-expanded="false" aria-label="Menu">☰</button>
+            </div>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About Us</a></li>
+                <li><a href="#products" class="nav-link">Products</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#clients" class="nav-link">Our Clients</a></li>
+                <li><a href="#contact" class="nav-link">Contact Us</a></li>
             </ul>
         </div>
     </nav>
     
-    <main>
-        <section class="hero">
-            <div class="container">
-                <h1>Premium Paver Blocks for Every Construction Need</h1>
-                <p>Trusted manufacturer of interlocking, zigzag, designer, and heavy-duty paver blocks.</p>
-                <a href="contact.html" class="btn">Get Quote</a>
+    <main id="main-content">
+        <!-- 1. Home Section -->
+        <section id="home" class="section active">
+            <div class="hero glass-hero">
+                <div class="container">
+                    <h1 class="gold-text">Premium Paver Blocks for Every Construction Need</h1>
+                    <p>Trusted manufacturer of interlocking, zigzag, designer, and heavy-duty paver blocks.</p>
+                    <a href="#contact" class="btn gold-btn nav-link">Get Quote</a>
+                </div>
             </div>
         </section>
-        
-        <section class="overview">
+
+
+        <!-- 2. About Us Section -->
+        <section id="about" class="section glass-section">
             <div class="container">
-                <h2>Our Products</h2>
-                <p>We offer a wide range of paver blocks designed for durability and aesthetics.</p>
+                <h1 class="gold-text">About Neeraj Construction</h1>
+                <p>We are a leading manufacturer of paver blocks with over 10 years of experience in the construction industry. Our mission is to provide high-quality, durable products that meet the needs of our clients.</p>
+                <h2>Our Manufacturing Strength</h2>
+                <p>Equipped with state-of-the-art machinery and a skilled workforce, we ensure every product meets international standards.</p>
+                <h2>Mission & Vision</h2>
+                <p><strong>Mission:</strong> To deliver innovative and sustainable paver solutions.<br><strong>Vision:</strong> To be the preferred choice for construction materials in India.</p>
+            </div>
+        </section>
+
+        <!-- 3. Our Paver Block Section (Banner + Cards) -->
+        <section id="products" class="section glass-section">
+            <div class="container">
+                <div class="products-banner">
+                    <h1 class="gold-text">Our Paver Block Products</h1>
+                    <p>Explore our range of paver blocks. Click on a product for more details.</p>
+                </div>
                 <div class="product-grid">
-                    <div class="product-card">
-                        <img src="images/interlocking.jpg" alt="Interlocking Paver Blocks" loading="lazy">
-                        <h3>Interlocking Paver Blocks</h3>
-                        <p>Easy to install and highly durable.</p>
+                    <div class="product-card glass-card" data-type="interlocking">
+                        <img src="images/interlocking.svg" alt="Interlocking Paver Blocks" loading="lazy">
+                        <div class="card-content">
+                            <h3>Interlocking Paver Blocks</h3>
+                            <p>Easy to install and highly durable.</p>
+                            <button class="view-details-btn gold-btn" data-product="interlocking">View Details</button>
+                        </div>
                     </div>
-                    <div class="product-card">
-                        <img src="images/zigzag.jpg" alt="Zigzag Paver Blocks" loading="lazy">
-                        <h3>Zigzag Paver Blocks</h3>
-                        <p>Unique design for modern landscapes.</p>
+                    <div class="product-card glass-card" data-type="zigzag">
+                        <img src="images/zigzag.svg" alt="Zigzag Paver Blocks" loading="lazy">
+                        <div class="card-content">
+                            <h3>Zigzag Paver Blocks</h3>
+                            <p>Unique design for modern landscapes.</p>
+                            <button class="view-details-btn gold-btn" data-product="zigzag">View Details</button>
+                        </div>
                     </div>
-                    <div class="product-card">
-                        <img src="images/designer.jpg" alt="Designer Paver Blocks" loading="lazy">
-                        <h3>Designer Paver Blocks</h3>
-                        <p>Custom patterns for aesthetic appeal.</p>
+                    <div class="product-card glass-card" data-type="designer">
+                        <img src="images/designer.svg" alt="Designer Paver Blocks" loading="lazy">
+                        <div class="card-content">
+                            <h3>Designer Paver Blocks</h3>
+                            <p>Custom patterns for aesthetic appeal.</p>
+                            <button class="view-details-btn gold-btn" data-product="designer">View Details</button>
+                        </div>
                     </div>
-                    <div class="product-card">
-                        <img src="images/heavy-duty.jpg" alt="Heavy-Duty Paver Blocks" loading="lazy">
-                        <h3>Heavy-Duty Paver Blocks</h3>
-                        <p>Built for high-traffic areas.</p>
+                    <div class="product-card glass-card" data-type="heavy-duty">
+                        <img src="images/heavy-duty.svg" alt="Heavy-Duty Paver Blocks" loading="lazy">
+                        <div class="card-content">
+                            <h3>Heavy-Duty Paver Blocks</h3>
+                            <p>Built for high-traffic areas.</p>
+                            <button class="view-details-btn gold-btn" data-product="heavy-duty">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Details Modal (hidden by default) -->
+        <div id="product-modal" class="modal" style="display:none;">
+            <div class="modal-content glass-card">
+                <span class="close-modal" id="close-modal">&times;</span>
+                <div id="modal-body"></div>
+            </div>
+        </div>
+
+        <!-- 4. Why Choose Us Section -->
+        <section id="why-choose" class="section glass-section">
+            <div class="container">
+                <h2 class="gold-text" style="font-size:2.3rem;letter-spacing:1px;">Why Choose Us?</h2>
+                <div class="why-choose-grid">
+                    <div class="why-card">
+                        <div class="why-icon">🏭</div>
+                        <div class="why-title">10+ Years Experience</div>
+                        <div class="why-desc">Proven expertise in paver block manufacturing and construction solutions.</div>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon">🛡️</div>
+                        <div class="why-title">Premium Quality</div>
+                        <div class="why-desc">Only the best materials and craftsmanship for lasting durability.</div>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon">⏱️</div>
+                        <div class="why-title">On-Time Delivery</div>
+                        <div class="why-desc">Reliable, fast, and always on schedule for your project needs.</div>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon">🎯</div>
+                        <div class="why-title">Custom Solutions</div>
+                        <div class="why-desc">Tailored products and services to fit your unique requirements.</div>
                     </div>
                 </div>
             </div>
         </section>
         
-        <section class="why-choose">
+
+        <!-- Gallery Section (Moved to Bottom) -->
+        <section id="gallery" class="section glass-section">
             <div class="container">
-                <h2>Why Choose Us?</h2>
-                <ul>
-                    <li>Years of experience in manufacturing</li>
-                    <li>High-quality materials and craftsmanship</li>
-                    <li>Competitive pricing and timely delivery</li>
-                    <li>Custom solutions for your projects</li>
-                </ul>
+                <h1 class="gold-text">Gallery</h1>
+                <p>Explore photos of our manufacturing plants, clients, and paver installations.</p>
+                <div class="gallery-grid">
+                    <img src="images/gallery-plant1.jpg" alt="Manufacturing Plant 1" loading="lazy">
+                    <img src="images/gallery-plant2.jpg" alt="Manufacturing Plant 2" loading="lazy">
+                    <img src="images/gallery-client1.jpg" alt="Client Visit" loading="lazy">
+                    <img src="images/gallery-paver1.jpg" alt="Paver Installation" loading="lazy">
+                    <img src="images/gallery-paver2.jpg" alt="Paver Block Showcase" loading="lazy">
+                </div>
             </div>
         </section>
+
+        <!-- Clients Section (Moved to Bottom) -->
+        <section id="clients" class="section glass-section">
+            <div class="container">
+                <h1 class="gold-text">Our Clients</h1>
+                <p>We are proud to work with leading organizations and businesses.</p>
+                <div class="clients-grid">
+                    <div class="client-card">
+                        <img src="images/client-logo1.png" alt="Client 1" loading="lazy">
+                        <span>ABC Constructions</span>
+                    </div>
+                    <div class="client-card">
+                        <img src="images/client-logo2.png" alt="Client 2" loading="lazy">
+                        <span>XYZ Developers</span>
+                    </div>
+                    <div class="client-card">
+                        <img src="images/client-logo3.png" alt="Client 3" loading="lazy">
+                        <span>Prime Infra</span>
+                    </div>
+                    <div class="client-card">
+                        <img src="images/client-logo4.png" alt="Client 4" loading="lazy">
+                        <span>Urban Estates</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </section>
     </main>
+
+    <!-- Contact Section (Form at Bottom) -->
+        <section id="contact" class="section glass-section contact-bottom">
+            <div class="container">
+                <h1 class="gold-text">Contact Us</h1>
+                <form id="contact-form" class="glass-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" required>
+                    
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                    
+                    <button type="submit" class="gold-btn">Submit</button>
+                </form>
+                <div id="form-message"></div>
+            </div>
+        </section>
     
-    <footer>
+    <footer class="glass-footer">
         <div class="container">
-            <p>&copy; 2023 Neeraj Construction. All rights reserved.</p>
-            <p>Phone: <a href="tel:+911234567890" id="phone-link">+91 12345 67890</a> | WhatsApp: <a href="https://wa.me/911234567890" id="whatsapp-link">Chat Now</a></p>
+            <p>&copy; <span id="year">2025</span> Neeraj Construction. All rights reserved.</p>
+            <p>
+                <span style="display:inline-flex;align-items:center;gap:0.3em;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#D4AF37" style="vertical-align:middle;"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1.003 1.003 0 011.11-.21c1.21.49 2.53.76 3.88.76.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.07 21 3 13.93 3 5c0-.55.45-1 1-1h3.01c.55 0 1 .45 1 1 0 1.35.27 2.67.76 3.88.13.27.08.59-.21 1.11l-2.2 2.2z"/></svg>
+                    <a href="tel:+918700321855" id="phone-link">+91 8700-321-855</a>
+                </span>
+                |
+                <span style="display:inline-flex;align-items:center;gap:0.3em;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" fill="#25D366" style="vertical-align:middle;"><path d="M16 3C9.373 3 4 8.373 4 15c0 2.637.813 5.09 2.352 7.188L4 29l7.031-2.305A12.93 12.93 0 0016 27c6.627 0 12-5.373 12-12S22.627 3 16 3zm0 22c-1.988 0-3.93-.52-5.625-1.504l-.403-.232-4.172 1.367 1.367-4.172-.232-.403A9.94 9.94 0 016 15c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10zm5.09-7.463c-.278-.139-1.641-.809-1.895-.902-.254-.093-.439-.139-.625.139-.186.278-.719.902-.881 1.088-.162.186-.324.209-.602.07-.278-.139-1.176-.433-2.241-1.381-.828-.737-1.386-1.646-1.549-1.924-.162-.278-.017-.428.122-.567.125-.124.278-.324.417-.486.139-.162.186-.278.278-.463.093-.186.047-.348-.023-.486-.07-.139-.625-1.509-.857-2.066-.226-.543-.456-.469-.625-.478-.162-.009-.348-.011-.534-.011-.186 0-.486.07-.74.348-.254.278-.97.949-.97 2.312s.993 2.684 1.131 2.874c.139.186 1.953 2.988 4.74 4.068.663.286 1.18.457 1.584.585.665.212 1.271.182 1.75.11.534-.08 1.641-.669 1.874-1.316.232-.647.232-1.201.162-1.316-.07-.115-.255-.186-.533-.324z"/></svg>
+                    <a href="https://wa.me/918700321855" id="whatsapp-link">Chat Now</a>
+                </span>
+            </p>
         </div>
     </footer>
     
     <script src="script.js"></script>
+
 </body>
 </html>

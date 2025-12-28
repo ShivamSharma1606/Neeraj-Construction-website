@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#222"/>
+  <path d="M60 300 L140 180 L220 300 L300 180 L380 300 L460 180 L540 300" stroke="#D4AF37" stroke-width="24" fill="none" stroke-linecap="round"/>
+  <text x="400" y="520" font-family="Georgia, serif" font-size="32" fill="#fff" text-anchor="middle">Zigzag</text>
+</svg>
