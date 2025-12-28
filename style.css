@@ -398,6 +398,60 @@ html {
     padding: 2.2rem 1.2rem 1.5rem 1.2rem;
     transition: transform 0.22s cubic-bezier(.2,0,.08,1), box-shadow 0.22s;
     border-radius: 14px;
+
+/* Comparison table + mobile card fallback */
+.table-wrapper {
+    overflow-x: auto;
+    margin-top: 1.25rem;
+}
+.compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255,255,255,0.02);
+    border-radius: 8px;
+    overflow: hidden;
+}
+.compare-table thead th {
+    text-align: left;
+    padding: 0.9rem 1rem;
+    background: rgba(212,175,55,0.06);
+    color: var(--color-gold);
+    font-weight: 700;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.compare-table tbody td {
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+    vertical-align: top;
+}
+.compare-table tbody tr:last-child td { border-bottom: none; }
+
+.visually-hidden {
+    position: absolute !important;
+    height: 1px; width: 1px;
+    overflow: hidden; clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap; border: 0; padding: 0; margin: -1px;
+}
+
+.compare-cards { display: none; margin-top: 1rem; }
+.compare-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.03);
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 0.9rem;
+}
+.compare-card .feature { color: var(--color-gold); margin-bottom: 0.4rem; }
+.compare-card ul { list-style: none; padding-left: 0; margin: 0; }
+.compare-card li { padding: 0.25rem 0; }
+
+/* Responsive: hide table on narrow screens and show cards */
+@media (max-width: 800px) {
+    .compare-table { display: none; }
+    .compare-cards { display: block; }
+}
+
+/** Gallery lightbox and inline-zoom removed **/
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -759,3 +813,268 @@ footer a:hover {
 }
 
 /* ... (rest of the styles remain the same) ... */
+
+/* ===== Additional Nav Width Fixes (override) ===== */
+nav {
+    width: 100%;
+    height: 70px;
+    left: 0;
+    right: 0;
+}
+
+/* ensure the inner container is constrained and centered */
+nav > .container {
+    max-width: var(--site-max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+/* prefer #nav-list / .nav-list layout */
+#nav-list, .nav-list {
+    display: flex !important;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+/* keep nav links from stretching across the viewport */
+.nav-list {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* small screens: nav-list becomes dropdown */
+@media (max-width: 900px) {
+    nav > .container { padding: 0 12px; }
+    #nav-list, .nav-list {
+        position: absolute;
+        top: var(--nav-height);
+        right: 12px;
+        left: auto;
+        width: 220px;
+        flex-direction: column;
+        background: rgba(6,6,6,0.98);
+        display: none;
+        padding: 0.5rem;
+    }
+    #nav-list.open, .nav-list.open { display: flex; }
+}
+
+/* Comparison Table Styling */
+
+.table-wrapper {
+    overflow-x: auto;
+    margin-top: 3rem;
+}
+
+.compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255,255,255,0.08);
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.compare-table th,
+.compare-table td {
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid rgba(212,175,55,0.25);
+}
+
+.compare-table th {
+    background: rgba(212,175,55,0.15);
+    color: #FFD700;
+    font-size: 1.05rem;
+}
+
+.compare-table td:first-child {
+    font-weight: 600;
+    color: #FFD700;
+}
+
+.compare-table tr:hover {
+    background: rgba(212,175,55,0.1);
+}
+
+/* Lightbox Styles */
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 100000;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(212,175,55,0.4);
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: #FFD700;
+    cursor: pointer;
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    font-size: 50px;
+    color: #FFD700;
+    cursor: pointer;
+    padding: 10px;
+    user-select: none;
+}
+
+.nav-btn.prev {
+    left: 30px;
+}
+
+.nav-btn.next {
+    right: 30px;
+}
+
+.gallery-item {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+
+/* Highlighted Catalogue Button */
+
+.catalog-btn {
+    position: relative;
+    background: linear-gradient(135deg, #D4AF37, #FFD700);
+    color: #000 !important;
+    font-weight: 700;
+    border-radius: 30px;
+    padding: 0.55rem 1.35rem;
+    white-space: nowrap;
+    transition: 0.3s ease;
+    box-shadow:
+        0 0 0 3px rgba(212,175,55,0.25),
+        0 8px 28px rgba(212,175,55,0.45);
+}
+
+.catalog-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow:
+        0 0 0 4px rgba(212,175,55,0.4),
+        0 12px 35px rgba(212,175,55,0.6);
+}
+/* ===== NAV CROPPING FIX (FINAL) ===== */
+
+/* allow glow/logo to breathe */
+nav {
+    overflow-y: visible;
+}
+
+/* give nav enough height */
+:root {
+    --nav-height: 80px;
+}
+
+/* proper vertical centering */
+nav .container {
+    height: 100%;
+    align-items: center;
+}
+
+/* logo fix */
+.logo-img {
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+}
+
+/* CTA button safety */
+.catalog-item {
+    display: flex;
+    align-items: center;
+}
+
+.catalog-btn {
+    line-height: 1;
+}
+
+/* ===== NAVBAR CROPPING & ALIGNMENT FIX (FINAL) ===== */
+
+:root {
+    --nav-height: 86px;
+}
+
+.site-nav {
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+}
+
+.nav-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* Logo + brand */
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    line-height: 1.2;
+}
+
+/* Nav links (Home issue) */
+.nav-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    line-height: 1.2;
+    padding: 0.8rem 1rem;
+}
+
+/* Catalogue button fix */
+.catalog-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    line-height: 1.2;
+    padding: 0.6rem 1.4rem;
+}
+

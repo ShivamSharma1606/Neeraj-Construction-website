@@ -154,4 +154,61 @@ document.addEventListener('DOMContentLoaded', function() {
         const id = location.hash.replace('#','');
         if (id) showSection(id);
     });
+
+    const images = document.querySelectorAll(".gallery-item");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.querySelector(".close-btn");
+const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".prev");
+
+let currentIndex = 0;
+
+// Open Lightbox
+images.forEach((img, index) => {
+    img.addEventListener("click", () => {
+        currentIndex = index;
+        showImage();
+        lightbox.style.display = "flex";
+        document.body.style.overflow = "hidden";
+    });
+});
+
+function showImage() {
+    lightboxImg.src = images[currentIndex].src;
+}
+
+// Close Lightbox
+closeBtn.addEventListener("click", closeLightbox);
+lightbox.addEventListener("click", e => {
+    if (e.target === lightbox) closeLightbox();
+});
+
+function closeLightbox() {
+    lightbox.style.display = "none";
+    document.body.style.overflow = "auto";
+}
+
+// Navigation
+nextBtn.addEventListener("click", e => {
+    e.stopPropagation();
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage();
+});
+
+prevBtn.addEventListener("click", e => {
+    e.stopPropagation();
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage();
+});
+
+// Keyboard support
+document.addEventListener("keydown", e => {
+    if (lightbox.style.display !== "flex") return;
+
+    if (e.key === "Escape") closeLightbox();
+    if (e.key === "ArrowRight") nextBtn.click();
+    if (e.key === "ArrowLeft") prevBtn.click();
+});
+
 });
