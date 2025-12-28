@@ -7,6 +7,18 @@ function trackEvent(eventName, parameters = {}) {
 
 // SPA Navigation with Smooth Scrolling and product view handling
 document.addEventListener('DOMContentLoaded', function() {
+    // Ensure CSS --nav-height matches the actual nav height so content never slips under it
+    const navbar = document.getElementById('navbar');
+    function updateNavHeight() {
+        if (!navbar) return;
+        const h = navbar.offsetHeight;
+        document.documentElement.style.setProperty('--nav-height', h + 'px');
+    }
+    // Update on load and resize to handle dynamic content/fonts/images
+    window.addEventListener('load', updateNavHeight);
+    window.addEventListener('resize', updateNavHeight);
+    // Call once now in case DOMContentLoaded occurs after layout
+    updateNavHeight();
     // Mobile nav toggle
     const navToggle = document.getElementById('nav-toggle');
     const navList = document.getElementById('nav-list');
@@ -113,10 +125,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Highlight nav links when sections enter viewport (scroll spy)
     if ('IntersectionObserver' in window) {
+        // compute dynamic rootMargin using current nav height
+        const navHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-height')) || 70;
+        const animOffset = 0; // no extra offset needed when sections do not translate
+        const rootMarginTop = -(navHeight + animOffset) + 'px';
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 const id = entry.target.id;
-                const link = document.querySelector(`#nav-list a[href=\"#${id}\"]`);
+                const link = document.querySelector(`#nav-list a[href="#${id}"]`);
                 // toggle active class on section for animation
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
@@ -129,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     link.classList.add('active');
                 }
             });
-        }, { threshold: 0.45, rootMargin: '-120px 0px -40px 0px' });
+        }, { threshold: 0.45, rootMargin: `${rootMarginTop} 0px -40px 0px` });
         sections.forEach(s => observer.observe(s));
     }
 

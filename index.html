@@ -28,20 +28,22 @@
 </head>
     <a class="skip-link" href="#main-content">Skip to content</a>
 <body>
-    <nav id="navbar" class="glass-nav">
-        <div class="container">
-            <div class="logo">
-                <img src="images/logo.svg" alt="Neeraj Construction Logo" class="logo-img" style="display:block;margin:0 auto;">
-                <h1 style="margin-top:0.7rem;text-align:center;">Neeraj Construction</h1>
-                <button id="nav-toggle" aria-controls="nav-list" aria-expanded="false" aria-label="Menu">☰</button>
-            </div>
-            <ul>
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About Us</a></li>
-                <li><a href="#products" class="nav-link">Products</a></li>
-                <li><a href="#gallery" class="nav-link">Gallery</a></li>
-                <li><a href="#clients" class="nav-link">Our Clients</a></li>
-                <li><a href="#contact" class="nav-link">Contact Us</a></li>
+    <nav id="navbar" class="site-nav" role="navigation">
+        <div class="container nav-container">
+            <a href="#home" class="logo-link">
+                <img src="images/logo.svg" alt="Neeraj Construction Logo" class="logo-img">
+                <span class="brand">Neeraj Construction</span>
+            </a>
+
+            <button id="nav-toggle" class="nav-toggle" aria-controls="nav-list" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+
+            <ul id="nav-list" class="nav-list" role="menubar">
+                <li role="none"><a role="menuitem" href="#home" class="nav-link active">Home</a></li>
+                <li role="none"><a role="menuitem" href="#about" class="nav-link">About Us</a></li>
+                <li role="none"><a role="menuitem" href="#products" class="nav-link">Products</a></li>
+                <li role="none"><a role="menuitem" href="#gallery" class="nav-link">Gallery</a></li>
+                <li role="none"><a role="menuitem" href="#clients" class="nav-link">Our Clients</a></li>
+                <li role="none"><a role="menuitem" href="#contact" class="nav-link">Contact Us</a></li>
             </ul>
         </div>
     </nav>
@@ -51,7 +53,8 @@
         <section id="home" class="section active">
             <div class="hero glass-hero">
                 <div class="container">
-                    <h1 class="gold-text">Premium Paver Blocks for Every Construction Need</h1>
+
+                    <h1 class="gold-text" style="margin: 150px;">Premium Paver Blocks for Every Construction Need</h1>
                     <p>Trusted manufacturer of interlocking, zigzag, designer, and heavy-duty paver blocks.</p>
                     <a href="#contact" class="btn gold-btn nav-link">Get Quote</a>
                 </div>
@@ -233,7 +236,7 @@
                 |
                 <span style="display:inline-flex;align-items:center;gap:0.3em;">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" fill="#25D366" style="vertical-align:middle;"><path d="M16 3C9.373 3 4 8.373 4 15c0 2.637.813 5.09 2.352 7.188L4 29l7.031-2.305A12.93 12.93 0 0016 27c6.627 0 12-5.373 12-12S22.627 3 16 3zm0 22c-1.988 0-3.93-.52-5.625-1.504l-.403-.232-4.172 1.367 1.367-4.172-.232-.403A9.94 9.94 0 016 15c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10zm5.09-7.463c-.278-.139-1.641-.809-1.895-.902-.254-.093-.439-.139-.625.139-.186.278-.719.902-.881 1.088-.162.186-.324.209-.602.07-.278-.139-1.176-.433-2.241-1.381-.828-.737-1.386-1.646-1.549-1.924-.162-.278-.017-.428.122-.567.125-.124.278-.324.417-.486.139-.162.186-.278.278-.463.093-.186.047-.348-.023-.486-.07-.139-.625-1.509-.857-2.066-.226-.543-.456-.469-.625-.478-.162-.009-.348-.011-.534-.011-.186 0-.486.07-.74.348-.254.278-.97.949-.97 2.312s.993 2.684 1.131 2.874c.139.186 1.953 2.988 4.74 4.068.663.286 1.18.457 1.584.585.665.212 1.271.182 1.75.11.534-.08 1.641-.669 1.874-1.316.232-.647.232-1.201.162-1.316-.07-.115-.255-.186-.533-.324z"/></svg>
-                    <a href="https://wa.me/918700321855" id="whatsapp-link">Chat Now</a>
+                    <a href="https://wa.me/918700321855" id="whatsapp-link" target="_blank">Chat Now</a>
                 </span>
             </p>
         </div>
